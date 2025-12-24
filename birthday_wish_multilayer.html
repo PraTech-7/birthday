@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Mansa My Babe ❤️</title>
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #ae1265, #db0d6d);
+    }
+
+    .page {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        color: #b90f0f;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.8s ease;
+    }
+
+    .page.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    h1 {
+        font-size: 50px;
+        margin-bottom: 15px;
+        text-shadow: 0 0 10px #ff48c4;
+    }
+
+    p {
+        font-size: 22px;
+        max-width: 700px;
+        text-shadow: 0 0 10px #00000080;
+    }
+
+    button {
+        margin-top: 25px;
+        padding: 12px 25px;
+        font-size: 20px;
+        border: none;
+        border-radius: 10px;
+        background: #ff48c4;
+        color: rgb(64, 105, 159);
+        cursor: pointer;
+        box-shadow: 0 0 12px #ff48c4;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+    }
+
+    /* Heart Animation */
+    .heart {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        background: red;
+        transform: rotate(45deg);
+        animation: floatUp 5s linear forwards;
+    }
+    .heart:before,
+    .heart:after {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        background: red;
+        border-radius: 50%;
+    }
+    .heart:before { top: -9px; left: 0; }
+    .heart:after { left: -9px; top: 0; }
+
+    @keyframes floatUp {
+        0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+        100% { transform: translateY(-700px) rotate(45deg); opacity: 0; }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+    <h1>Happy Birthday Baby ❤️</h1>
+    <h1>Mansa 💖</h1>
+    <button onclick="nextPage(2)">Tap Here For My Love For You</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+    <h1>My Love For You 💌</h1>
+    <p>
+        My babe, you are the most precious person in my life.  
+        Every moment with you feels magical.  
+        On your birthday, I want you to know how loved you are  
+        and how much you mean to me. ❤️ I love you sm that you cant even imagine. 
+        I wanna be with you together and forever. I love you sm
+
+
+    </p>
+    <button onclick="nextPage(3)">Yha Thicha</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+    <h1> My Dear Princess 👑</h1>
+    <p>
+        I wish this year brings you happiness, peace, success  
+        and everything your heart desires.  
+        I am always with you, loving you, supporting you,  
+        and choosing you every day. ❤️  Happy birthday babe . 
+    </p>
+    <button onclick="nextPage(4)">Last page haita</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+    <h1>I Love You Forever ❤️</h1>
+    <p>You are my heart, my happiness, my everything. <br>
+        i love you more than you can imagine! <br>
+        Happy Birthday My Babygirl <br>
+        Chuppah  I love you sm and cant wait to see you
+
+
+
+
+    </p>
+</div>
+
+<script>
+let currentPage = 1;
+
+function nextPage(page) {
+    // hide current
+    document.getElementById("page" + currentPage).classList.remove("active");
+
+    // show next
+    document.getElementById("page" + page).classList.add("active");
+
+    currentPage = page;
+}
+
+// hearts floating
+function createHeart() {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = "100vh";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
